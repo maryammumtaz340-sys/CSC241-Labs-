@@ -1,0 +1,41 @@
+CSC241 - Lab 02 - Predictions
+Written before compiling/running each program.
+
+=== Task 1 (Task1Demo.java) ===
+Before change:
+BAI-001 | Abeer Amina | 30
+BAI-002 | Ali Ishtiaq | 45
+BAI-003 | Abdul Rehman Azam | 60
+After s2.completedCredits += 5:
+BAI-001 | Abeer Amina | 30   (unchanged)
+BAI-002 | Ali Ishtiaq | 50   (changed)
+BAI-003 | Abdul Rehman Azam | 60   (unchanged)
+
+=== Task 2 (Task2Demo.java) ===
+s1.addCredits(3)  -> completedCredits: 30 -> 33
+s2.addCredits(6)  -> completedCredits: 45 -> 51
+s1.remainingCredits(130) -> 130 - 33 = 97
+s2.remainingCredits(130) -> 130 - 51 = 79
+
+=== Task 3 (OverloadDemo.java) ===
+enroll("CSC241")        -> "Enrolled by course code: CSC241"
+enroll("CSC241", 2)     -> "Enrolled in CSC241, section 2"
+enroll(241)             -> "Enrolled by numeric code: 241"
+enroll()                -> INVALID: no matching method, compile-time error
+enroll("241", "2")      -> INVALID: no matching method, compile-time error
+
+=== Task 4 (PassByValueDemo.java) ===
+Experiment A: num before = 10, inside x becomes 99, num after = 10 (unchanged)
+Experiment B: completedCredits before = 20, inside becomes 99, after (caller) = 99 (changed)
+Experiment C: name before = "Original", inside local st.name becomes "Temporary",
+              after (caller) name = "Original" (unchanged)
+
+=== Task 5 (AIExperimentDemo.java) ===
+exp1 initial: completedEpochs = 10, targetEpochs = 50
+exp2 initial: completedEpochs = 20, targetEpochs = 40
+exp1.runEpochs(5)      -> completedEpochs = 15
+exp2.runEpochs(3, 2)   -> completedEpochs = 25
+exp1.remainingEpochs() -> 50 - 15 = 35
+exp2.remainingEpochs() -> 40 - 25 = 15
+exp2 status unaffected by exp1's changes
+trainMore(exp1)        -> exp1.completedEpochs = 15 + 5 = 20
