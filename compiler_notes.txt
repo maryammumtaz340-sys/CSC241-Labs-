@@ -1,0 +1,5 @@
+javac OverloadDemo.java
+OverloadDemo.java:XX: error: enroll(String) is already defined in OverloadDemo
+    int enroll(String courseCode) {
+        ^
+1 error
